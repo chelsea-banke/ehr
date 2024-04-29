@@ -1,0 +1,12 @@
+<svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Action / change history">
+<mask id="mask0_6_289" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="3" y="5" width="24" height="20">
+<g id="Icon Mask">
+<path id="Round" fill-rule="evenodd" clip-rule="evenodd" d="M3.68661 22.7975L13.9366 6.40996C14.4241 5.62246 15.5741 5.62246 16.0616 6.40996L26.3116 22.7975C26.8241 23.635 26.2366 24.71 25.2491 24.71H4.74911C3.77411 24.71 3.17411 23.635 3.68661 22.7975ZM22.9866 22.21L14.9991 9.42246L7.01161 22.21H22.9866Z" fill="black"/>
+</g>
+</mask>
+<g mask="url(#mask0_6_289)">
+<rect id="Color Fill" y="0.264648" width="30" height="30" fill="#858C94"/>
+</g>
+</g>
+</svg>

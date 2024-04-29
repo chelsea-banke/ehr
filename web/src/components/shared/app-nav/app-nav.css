@@ -1,0 +1,15 @@
+.icon{
+    width: 25px !important;
+    /* display: inline !important; */
+}
+.active{
+    border-left: 8px solid #0EB29A !important;
+}
+.full-nav{
+    /* height: 92.5vh; */
+    min-width: 250px !important;
+}
+.mid-nav{
+    min-width: none;
+    width: 80px !important;
+}
