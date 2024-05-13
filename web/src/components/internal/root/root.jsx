@@ -4,7 +4,7 @@ import TopBar from "../../shared/top-bar/top-bar"
 
 const Root = ()=>{
     return(
-        <div>
+        <div className="overflow-hidden h-screen">
             <TopBar/>
             <div className="flex">
                 <AppNav/>

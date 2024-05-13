@@ -1,0 +1,11 @@
+th, td {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 40px;
+}
+
+.table-list{
+    height: 88vh;
+    overflow-y: scroll !important;
+}

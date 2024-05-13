@@ -1,0 +1,7 @@
+.diagnosis {
+    max-width: 600px;
+}
+.report-view{
+    overflow-y: scroll;
+    height: 88vh;
+}

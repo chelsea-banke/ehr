@@ -3,7 +3,15 @@
 }
 .db-barner{
     width: 100% !important;
+    height: 200px;
 }
 .profile{
     width: 18%;
+}
+.cube {
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    -webkit-box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.2);
+    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.2);
 }

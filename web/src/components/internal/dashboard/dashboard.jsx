@@ -3,15 +3,18 @@ import db from "../../../assets/images/dashboard-barner.png"
 import ellipse from "../../../assets/images/ellipse.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import "./dashboard.css"
+import NeuralAnimation from "../../shared/neuralAnimation/neural-animation"
 
 const Dashboard = ()=>{
+
     return(
         <div className="h-full flex justify-between">
             <div className="w-full mt-5 mx-28">
-                <div className="db-barner m-auto rounded-2xl overflow-hidden relative">
-                    <img className="absolute profile mt-4 left-3" src={ellipse} alt="" />
+                <div className="db-barner m-auto rounded-2xl overflow-hidden relative bg-blue-500">
+                    <img className="absolute profile mt-4 left-3 z-10" src={ellipse} alt="" />
                     <p className="absolute right-5 text-2xl font-medium border-2 border-t-0 border-white bg-blue-300 rounded-b-lg text-white px-5 py-2">Doctor John Doe</p>
-                    <img src={db} alt="" className="w-full" />
+                    {/* <img src={db} alt="" className="w-full" /> */}
+                    <NeuralAnimation/>
                 </div>
                 <div className="mt-10">
                     <div>

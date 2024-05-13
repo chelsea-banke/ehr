@@ -1,6 +1,6 @@
 import "./app-input.css"
 
-const AppInput = ({label, placeholder, type, required=false, fill=true})=>{
+const AppInput = ({label, placeholder, type="text", required=false, fill=true})=>{
     return (
         <div className="mt-4">
             <label className={`block ml-3 ${required ? 'required' : ''}`} htmlFor="">{label}</label>

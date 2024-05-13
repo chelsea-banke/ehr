@@ -1,0 +1,36 @@
+.patients-list-container{
+    width: 17%;
+    max-width: 265px;
+    box-shadow: rgba(0, 0, 0, 0.45) 15px -0px 20px -20px;
+}
+
+.patients-search:focus{
+    outline: none;
+}
+.patients-nav .profile-img, .patients .profile-img{
+    width: 35px;
+    height: 35px;
+}
+.link-icon{
+    rotate: 45deg;
+}
+.patients-nav .active{
+    background-color: white;
+    color: #0EB29A;
+    padding-bottom: 10px;
+}
+.patients-nav .active div{
+    margin-top: 5px;
+}
+.patients-list{
+    height: 88vh !important;
+    overflow-y: scroll;
+}
+
+.patients .active{
+    /* border-left: none !important; */
+}
+
+.patients-list .active{
+    background-color: #bbf7d0 !important;
+}

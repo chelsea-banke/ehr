@@ -11,5 +11,8 @@
 }
 .mid-nav{
     min-width: none;
-    width: 80px !important;
+    width: 86px !important;
+}
+nav{
+    box-shadow: rgba(0, 0, 0, 0.45) 15px -0px 20px -20px;
 }

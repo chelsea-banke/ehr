@@ -1,0 +1,7 @@
+.create-new-report{
+    height: 88vh;
+    overflow-y: scroll;
+}
+.dosage-input input{
+    width: 80px;
+}
