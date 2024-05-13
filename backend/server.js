@@ -1,0 +1,23 @@
+require("dotenv").config()
+const cookieParser = require("cookie-parser")
+const express = require('express')
+const connection = require("./src/utils/connection")
+const rootRouter = require("./src/routes/rootRouter")
+const adminRouter = require("./src/routes/adminRouter")
+const doctorRouter = require("./src/routes/doctorRouter")
+const nurseRouter = require("./src/routes/nurseRouter")
+const labtechRouter = require("./src/routes/labtechRouter")
+
+const server = express()
+server.use(cookieParser())
+server.use(express.json())
+server.use('/ehr/root', rootRouter)
+server.use('/ehr/admin', adminRouter)
+server.use('/ehr/doctor', doctorRouter)
+server.use('/ehr/nurse', nurseRouter)
+server.use('/ehr/labteh', labtechRouter)
+
+server.listen(process.env.SERVER_PORT, async()=>{
+    console.log(`server is listening on port ${process.env.SERVER_PORT}...`)
+    await connection.sync()
+})

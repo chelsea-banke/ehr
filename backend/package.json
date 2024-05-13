@@ -1,0 +1,23 @@
+{
+  "name": "ehr-server",
+  "version": "1.0.0",
+  "description": "electronic health records server",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.1",
+    "mysql2": "^3.2.4",
+    "sequelize": "^6.32.1",
+    "sequelize-auto": "^0.8.8"
+  }
+}
