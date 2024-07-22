@@ -1,0 +1,16 @@
+.vitals{
+    height: 88vh;
+    overflow-y: scroll;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.vitals input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+.vitals input[type=number] {
+    -moz-appearance: textfield;
+}

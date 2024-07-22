@@ -1,0 +1,8 @@
+✔ update patients list status after fetch @done(24-06-21 19:22)
+☐ make patients list fetch api staff role dependent
+✔ stop patients from being fetched with passwords @done(24-06-30 13:50)
+✔ fetch correct tests and prescription counts when fetching reports @done(24-06-29 09:16)
+✔ make vitals fetch current and not previous state @done(24-06-29 09:16)
+☐ make profile photos editatble and firebase stored
+☐ sort and number tests and reports based on date created
+☐ make sure create report and edit report actions work

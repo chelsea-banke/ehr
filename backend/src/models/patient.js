@@ -24,7 +24,15 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.DATE,
       allowNull: true
     }
-  }, {
+  },{
+    defaultScope: {
+      attributes: { exclude: ['password'] },
+    },
+    scopes: {
+      withPassword: {
+        attributes: {},
+      },
+    },
     sequelize,
     tableName: 'patient',
     timestamps: false,
@@ -38,5 +46,6 @@ module.exports = function(sequelize, DataTypes) {
         ]
       },
     ]
-  });
+  }
+  );
 };

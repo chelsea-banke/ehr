@@ -1,7 +1,8 @@
 const connection = require("../utils/connection")
 const { DataTypes } = require("sequelize")
 
-module.exports = connection.define('centerHasPatient', {
+module.exports = (sequelize, DataType) =>{
+  return sequelize.define('centerHasPatient', {
     centerCenterId: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -50,5 +51,8 @@ module.exports = connection.define('centerHasPatient', {
         ]
       },
     ]
-  }
-);
+  });
+}
+
+// models.center.belongsToMany(models.patient)
+// models.patient.belongsToMany(models.center)

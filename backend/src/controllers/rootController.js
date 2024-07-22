@@ -1,21 +1,32 @@
 const jwt = require("jsonwebtoken")
 const bcrypt = require("bcryptjs")
 const connection = require("../utils/connection")
+const { sendEmail } = require("../utils/mail")
 const models = require("../models/init-models").initModels(connection)
 
 const createNewCenter = async (req, res)=>{
-    await models.center.create(req.body).then(results=>{
-        res.status(200).json({
-            "success": true,
-            "message": "center successfully created",
-            "data": results
+    const data = req.body
+    await models.center.findAll({attributes: ['centerId']}).then(async results => {
+        const centerIds = results.map(result => result['centerId'])
+        let tempId = Math.floor(1000 + Math.random() * 9000)
+        while(centerIds.includes(tempId)){
+            tempId = Math.floor(1000 + Math.random() * 9000) 
+        }
+        data['centerId'] = tempId
+        await models.center.create(data).then(results=>{
+            sendEmail(data['email'], data['centerId'])
+            res.status(200).json({
+                "success": true,
+                "message": "center successfully created",
+                "data": results
+            })
+        }).catch(error=>{
+            res.status(401).json({
+                "success": false,
+                "message": "error creating center",
+                "error": error.message
+            })   
         })
-    }).catch(error=>{
-        res.status(401).json({
-            "success": false,
-            "message": "error creating center",
-            "error": error.message
-        })   
     })
 }
 
@@ -49,7 +60,7 @@ const createNewAdmin = async (req, res)=>{
                         delete  results["dataValues"]["password"]
                         res.status(200).json({
                             "success": true,
-                            "message": "center successfully created",
+                            "message": "admin successfully created",
                             "data": results["dataValues"]
                         })
                     }).catch(error=>{
@@ -76,4 +87,5 @@ const createNewAdmin = async (req, res)=>{
         })   
     })
 }
+
 module.exports = {createNewCenter, createNewAdmin}

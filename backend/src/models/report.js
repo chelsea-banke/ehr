@@ -5,15 +5,15 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: true,
       primaryKey: true,
-      autiIncrement: true,
+      autoIncrement: true,
       field: 'report_id'
     },
     diagnosis: {
-      type: DataTypes.STRING(45),
+      type: DataTypes.STRING(500),
       allowNull: true
     },
     prescriptions: {
-      type: DataTypes.STRING(45),
+      type: DataTypes.STRING(500),
       allowNull: true
     },
     dateCreated: {

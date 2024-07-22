@@ -5,6 +5,11 @@ th, td {
     padding-right: 40px;
 }
 
+.index{
+    padding: 0px !important;
+    width: 70px;
+}
+
 .table-list{
     height: 88vh;
     overflow-y: scroll !important;

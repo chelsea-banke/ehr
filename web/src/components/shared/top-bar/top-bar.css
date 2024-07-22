@@ -1,3 +1,23 @@
+.top-bar{
+    z-index: 10 !important;
+}
+
 .dp{
     width: 30px;
+}
+.notifications{
+    height: 94vh;
+    width: 300px;
+    z-index: 5 !important;
+}
+
+.notifications-in{
+    margin-top: 55px;
+}
+.notifications-out{
+    margin-top: -94vh;
+}
+.notif-placeholder{
+    margin-left: 18.5px !important;
+    margin-right: 18.5px !important;
 }

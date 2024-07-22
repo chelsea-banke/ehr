@@ -3,5 +3,16 @@
 }
 .report-view{
     overflow-y: scroll;
-    height: 88vh;
+    height: fit-content;
+    max-height: 88vh;
+}
+.report-view .controls-container{
+    width: 43%;
+}
+.tests-container{
+    min-height: 57vh;
+    height: 100%;
+}
+.prescriptions-container{
+    min-height: 44.5vh;
 }

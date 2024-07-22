@@ -35,6 +35,14 @@ module.exports = function(sequelize, DataTypes){
     field: 'center_center_id'
   }
 }, {
+  defaultScope: {
+    attributes: { exclude: ['password'] },
+  },
+  scopes: {
+    withPassword: {
+      attributes: {},
+    },
+  },
   sequelize,
   tableName: 'admin',
   timestamps: false,

@@ -5,6 +5,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
+      autoIncrement: true,
       field: 'test_id'
     },
     testName: {
@@ -14,15 +15,22 @@ module.exports = function(sequelize, DataTypes) {
     },
     results: {
       type: DataTypes.STRING(45),
-      allowNull: true
+      allowNull: true,
+      field: 'results'
     },
-    attachment: {
-      type: DataTypes.BLOB,
-      allowNull: true
+    description: {
+      type: DataTypes.STRING(500),
+      allowNull: true,
+      field: 'description'
+    },
+    dateCreated: {
+      type: DataTypes.STRING(45),
+      allowNull: true,
+      field: 'date_created'
     },
     doctorUsername: {
       type: DataTypes.STRING(45),
-      allowNull: false,
+      allowNull: true,
       references: {
         model: 'doctor',
         key: 'username'
@@ -31,7 +39,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     doctorCenterCenterId: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       references: {
         model: 'doctor',
         key: 'center_center_id'
@@ -40,7 +48,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     labtechUsername: {
       type: DataTypes.STRING(45),
-      allowNull: false,
+      allowNull: true,
       references: {
         model: 'labtech',
         key: 'username'
@@ -49,7 +57,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     labtechCenterCenterId: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       references: {
         model: 'labtech',
         key: 'center_center_id'

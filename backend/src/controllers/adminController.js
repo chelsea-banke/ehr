@@ -17,7 +17,6 @@ const createNewStaff = async (req, res)=>{
                         console.log(results)
                         if(results.length == 0){
                             await models.doctor.create(credentials).then(results=>{
-                                delete results["dataValues"]["password"]
                                 res.status(200).json({
                                     "success": true,
                                     "message": "staff successfully created",
@@ -34,7 +33,7 @@ const createNewStaff = async (req, res)=>{
                         else{
                             res.status(400).json({
                                 "success": false,
-                                "message": "staff does not exist"
+                                "message": "staff already exist"
                             }) 
                         }
                     }).catch(error=>{
@@ -225,4 +224,46 @@ const updateStaffStatus = async (req, res)=>{
     }
 }
 
-module.exports = {createNewStaff, updateStaffStatus}
+const getStaffs = async (req, res) => {
+    const query = req.query
+    const staffs = []
+    await models.doctor.findAll({where: {'centerCenterId': query['centerId']}}).then(async doctors => {
+        staffs.push(...doctors)
+        await models.nurse.findAll({where: {'centerCenterId': query['centerId']}}).then(async nurses => {
+            staffs.push(...nurses)
+            await models.labtech.findAll({where: {'centerCenterId': query['centerId']}}).then(labtechs => {
+                staffs.push(...labtechs)
+                staffs.sort(() => Math.random() - 0.5)
+                res.status(200).json({
+                    "success": true,
+                    "message": "staff successfully fetched",
+                    "data": staffs
+                })
+            }).catch(error=>{
+                res.status(401).json({
+                    "success": false,
+                    "message": "error fetching labtechs",
+                    "error": error.message
+                })   
+            })
+        }).catch(error=>{
+            res.status(401).json({
+                "success": false,
+                "message": "error fetching nurses",
+                "error": error.message
+            })   
+        })
+    }).catch(error=>{
+        res.status(401).json({
+            "success": false,
+            "message": "error fetching doctors",
+            "error": error.message
+        })   
+    })
+}
+
+// const getPatients = async () => {
+  
+// }
+
+module.exports = {createNewStaff, updateStaffStatus, getStaffs}
